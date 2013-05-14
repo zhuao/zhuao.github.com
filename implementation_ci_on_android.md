@@ -31,17 +31,17 @@ A healthy user base and an established development group
 #### Usability
 The easier a tool is to configure and use , the better.
 We could copy a configuration from existed to other one by jerkins command line.
+The more important usability is that the tool could be automated
 
-## Setup CI stages
-
+## Build CI
+Android上的CI构建链与其它平台CI构建链一致，依然经历Build, Inspection, Testing, Deploying阶段，最后通过Continuous Feedback将各个阶段的报告向整个团队公布。接下来逐步实现这几个阶段。
 
 ### Environment preparation
 * Setup Java, Android Environment
 * Install build tool and version control tool<br/>
 本文实践中采用SVN及Ant
-* Adapt Jenkins as CI server<br/>
-Bamboo和Jenkins(Hudson)是目前使用最多的两个CI构建工具。两者都能很好的满足Android平台的CI环境搭建。两者在工作流方式上的不同设计，CI流程配置的不同。但这不影响完成Android CI的运行。基于Jenkins的低学习成本和免费的优势，本文采用Jenkins搭建CI。Bamboo同样也能完成本文中所有步骤。
-Jenkins的安装请参考 <https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins>
+* Adopt Jenkins as CI server<br/>
+Bamboo和Jenkins(Hudson)是目前使用最多的两个CI构建工具。两者都能很好的满足Android平台的CI环境搭建。两者在工作流方式上的不同设计，使得CI流程配置的不同。但这不影响对Android CI的支持程度。<br/>基于Jenkins的低学习成本和免费的优势，本文采用Jenkins搭建CI。Jenkins的安装请参考其官方文档。
 
 
 ### Automate Build Process
@@ -56,6 +56,15 @@ Best Practise:
 
 ### Continuous Testing
 Continuous Testing是一种快速收集软件健康状况的方式。为了更好的反馈软件的健康状况，可从UI, Function, Code三个粒度来检测。本文将讨论如果进行不同粒度的测试，并实现Continuous Test。
+
+Best Practice
+
+* Categorize developer test by type - unit, component, function, system<br/>
+Unit tests run most often (with every commit); component tests, systemtests, and functional tests can be run with secondary builds or onperiodic intervals.
+* Run faster test first
+* Make Functional test repeatable
+Backend server's data could be changed, what could do if we want to make the test repeatable? Abstract a data set.
+* Limit test case to on assert
 
 Android为大家提供了一套集成测试框架，并且在Android4.1及以上版本上又提供了一套UI测试框架。这两套测试框架再加上JUnit，似乎已经为Android开发者提供了一套完善的测试框架，并且充分的满足了三种粒度的需要。但Android developer依然认为Android的自动化测试相当痛苦。由JUnit+Android integration testing framework + Android UI automator构建的Android测试体系存在的问题：
 
@@ -82,13 +91,34 @@ Calabash Android的主要优势有以下三点：
 ### Continuous Inspection
 Continuous Inspection是对于代码本身检测和反馈。检测主要通过对代码静态分析验证代码风格，编程规范，代码复用，代码语言中的Best Practise等多个维度的代码质量。
 
+Best Practise:
+* Code metricx
+* Reduce Code Complexity
+* Perform Design review continuously
+* Maintain organizational standards with code audits
+* Reduce duplicate code
+* Access code coverage
+
 Sonar作为一个开源的代码质量检测工具，涵盖了7项代码质量检测方式。这充分满足Android平台下对于代码质量的检测分析。
 ### Continuous Deployment
 由于Android App采用用户手动从Appstore自行下载安装的方式发布，使得Android App无法直接部署至用户手机中。另外Appstore需要对于上线的App进行审核，不能持续进行Release。因而Android中Continuous Deployment将以持续发布可安装包为目标。
 
+Best practise:
+* Release working software any time, any place
+* Label repository's assets
+* Produce a clean environment
+* Label each build
+* Run all test
+* Create Build feedback reports
+* Process capability to roll back release
+
 在以上目的下，只需根据自身项目资源找到合适的安装包管理工具即可。如本文采用Dropbox来管理所有安装包。
 ### Continous Feedback
 Continuou Feeback的目的就是让项目健康状况对所有人透明。在Continuous Testing, Continuous Inspection和Continuous Deployment阶段中都产生了项目健康状况报告，在此就应该将这些报告以最为有效的方式传递给合适的人。
+
+Best Practise:
+* All the right stuff
+* Use the continuous feedback mechanisms
 
 项目所有人都关心现在项目是否健康，那就应该将项目的总体情况告知所有人。通知的方式有很多中，不一定要采用邮件通知的方式。可以寻找更加有趣的方式，如果播放音乐和设置警报灯。在每一次Build成功或失败后都播放一段有趣的音乐，打开不同颜色的警报灯，是一种简单有效的方式，让项目所有人都获取到最为关键的信息。
 
