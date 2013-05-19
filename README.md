@@ -1,6 +1,4 @@
-uberobert.com
+zhuao.github.io
 =============
 
-Jekyll Source for my Blog! Huzzah! 
-
-[uber robert](http://uberobert.com)
+This project is the blog of me. <http://zhuao.github.io>
