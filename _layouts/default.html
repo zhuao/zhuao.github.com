@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         {% include assets/css/default.html %}
         {% include assets/js/default.html %}
+
     </head>
     <body id="{% include page/id %}">
         {% include header/navigation.html %}
@@ -29,4 +30,10 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+  $('img').each(function(index) {
+    $(this).attr('src', $(this).attr('src').replace("../assets", "/assets"));
+  })
+
+</script>
 </html>

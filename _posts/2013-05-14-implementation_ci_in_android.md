@@ -40,8 +40,7 @@ Bug的出现总是不可避免的，那就希望这些bug尽早的出现。持�
 
 ## 一步步实现Android CI
 Android上的CI构建链与其它平台一致，依然包含Compilation, Testing, Inspection, Deploying阶段，每一个阶段的Feedback的都保持对整个团队透明。
-
-![unit test report](/assets/attachment/ci_flow.png)
+![unit test report](../assets/attachment/implementation_ci_in_android/ci_flow.png)
 
 CI中各个步骤执行先后顺序的安排，应该是执行时间较短的优先执行。执行时间短的一般在提交代码前就可执行，错误率也比较低，就应该尽可能先执行。这样失败会来得更早一些，每一次CI运行失败前验证完毕的东西更多。上图中CI的工作流，正是在这样的一个原则的基础上形成的。
 
@@ -152,8 +151,8 @@ Unit Test是运行成本最低的测试，并且对于测试用例覆盖最为�
             description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
 
 从Jenkins上即可获得清晰的单元测试覆盖率的报告     
-    ![unit test report](/assets/attachment/unit_test_report.png)
-    ![function test report](/assets/attachment/function_test_report.png)
+    ![unit test report](../assets/attachment/implementation_ci_in_android/unit_test_report.png)
+    ![function test report](../assets/attachment/implementation_ci_in_android/function_test_report.png)
 
 ##### 添加Function Test
 Android为大家提供了一套集成测试框架Android integration testing framework。但此框架未集成Cucumber，这导致每增加一个Function Test都需要较大的开发和维护工作。这样高成本的实现Function Test将大大延缓开发进度，最终因为项目进度的原因导致Function Test被丢弃。产生这样的后果那必然是不愿意看到的。
@@ -184,9 +183,9 @@ Calabash Android的主要优势有以下三点：
 运行Calabash Android需要Ruby环境，同时也建议安装RVM。在CI agent上安装Ruby和RVM，并为Jenkins安装RVM plugin后运行环境就准备好了。
 
 在Jenkins中执行运行Calabash Android的shell命令前需要注意指定运行时的gemset  
-  ![screenshot for gemset](/assets/attachment/set_gemset.png)
+  ![screenshot for gemset](../assets/attachment/implementation_ci_in_android/set_gemset.png)
 Calabash Android在Jenkins中的执行命令如下：
-  ![run calabash script](/assets/attachment/run_calabash_script.png)
+  ![run calabash script](../assets/attachment/implementation_ci_in_android/run_calabash_script.png)
 Calabash在运行完毕之后，可以按照单元测试报告的规范提供测试报告
 
 ##### 添加UI Test
@@ -210,7 +209,7 @@ Android在新近退出了UI测试工具UIAutomator。此工具仅支持Android4.
 Sonar作为一个开源的代码质量检测工具，涵盖了7项代码质量检测方式。这充分满足Android平台下对于代码质量的检测分析。Sonar分为两部分一部分是代码分析工具，另一部分是数据分析展示的Server。
 
 Sonar可进行的分析维度在其Dashboard中可以看见:
-![Sonar Dashboard](/assets/attachment/sonar_dashboard.png)
+![Sonar Dashboard](../assets/attachment/implementation_ci_in_android/sonar_dashboard.png)
 
 Sonar的分析工具也有多种运行方式，可以由Ant script, Jenkins plugin, jar等多种方式运行，为了简化Jenkins的配置，本例子采用Ant script的方式运行：
 	
