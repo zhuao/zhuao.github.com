@@ -9,11 +9,3 @@ auto:        false
 future:      false
 pygments:    true
 markdown:    rdiscount
-
-# Site
-uberobert:
-    title: Zhu Ao
-
-# Only First P Plugin
-only_first_p:
-    show_read_more_link: false

@@ -1,10 +1,11 @@
 ---
   title: 实现Android CI
   layout: default
-  tag: Android, CI,  Automated Test
+  tag: Android, CI, Automated Test, jenkins
   author:
     name: Ao Zhu
     url: http://zhuao.github.io
+    
 ---
 
 # 实现Android CI
@@ -263,6 +264,54 @@ Feedback的通知方式有很多种，不一定要采用邮件通知的方式。
 
 * 向所有团队成员公布Feedback
 * 形成持续的发布Feedback的机制
+
+## Jenkins集成CI
+
+### Pipeline configuration	
+
+####1. Setup Workflow
+**initial job**
+	![Pipeline configuration](../assets/attachment/implementation_ci_in_android/configuration_pipeline.png )
+	
+**Specify downstream job**
+
+![Pipelie downstream configuration](../assets/attachment/implementation_ci_in_android/configuration_pipeline_downstream.png )
+	
+####2. Share the workspace**		
+
+The plugin "Jenkins Clone Workspace SCM Plug-in" support copy the workspace to next job.
+	
+**In upstream job**, The workspace is archived as following config
+	![](../assets/attachment/implementation_ci_in_android/configuration_pipeline_workspace_upstream.png )
+	
+**In downstream job**, the source is checkout from archived workspace.
+	![](../assets/attachment/implementation_ci_in_android/configuration_pipeline_workspace_downstream.png)
+
+####3. Synchronic the build number between jobs
+
+The plugin "Jenkins Parameterized Trigger plugin" support to pass the parameter from one job to other.
+
+**In upstream job**, The build number is setted as a parameter.
+
+![](../assets/attachment/implementation_ci_in_android/configuration_pipeline_parameter_upstream.png)
+
+**In downstram job**, The build number is got before checkout workspace.
+
+![](../assets/attachment/implementation_ci_in_android/configuration_pipeline_parameter_downstream.png)
+
+
+
+###All Jobs configuration:
+
+Job Name | pre build step | build step | post build step
+-------- | -------------- | ---------- | ------------
+Unit-Test | checkout code | compile_and_ut_coverage | publish unit test, archive workspace, set build number |
+Code-Inspection | get build number, checkout workspace | checkstyle, sonar |  archive workspace, set build number
+Function-Test | get build number, checkout workspace | run function test | publish FT result, archive workspace, set build number
+Publish-Package | get build number, checkout workspace | build_all_packages, publish_to_nexus | play the music
+
+
+
 
 ## 结束语
 从本文的实践来看为Android项目搭建CI与其他类型项目步骤基本一致，所不一样的是各步骤中依赖的实现技术而已。确实也因为Android CI所依赖的技术的不够成熟，存在一些支持不足的情况，如对UI的测试，影响了CI的价值。但它CI的价值依然值得花时间去搭建。
