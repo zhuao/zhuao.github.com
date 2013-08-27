@@ -19,7 +19,7 @@ Help all TW guys to know all the awayday conference information, and share the c
 ## Please Download our app:
 Android from [here](http://awayday.thoughtworkers.org/AwayDay-release.apk)
 
-iOS from [here](itms-services://?action=download-manifest&url=http://awayday.thoughtworkers.org/AwayDay2012.plist)
+iOS from [here](itms-services://?action=download-manifest&url=http://awayday.thoughtworkers.org/AwayDay2012.plist) [please access this link in iPhone]
 
 
 ## The App shortcuts:
