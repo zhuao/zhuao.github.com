@@ -17,9 +17,10 @@ Help all TW guys to know all the awayday conference information, and share the c
 2. Get notification when the session information is changed
 
 ## Please Download our app:
-Android from [here](http://awayday.thoughtworkers.org/AwayDay-release.apk)
+##[Android](http://awayday.thoughtworkers.org/AwayDay-release.apk)
 
-iOS from [here](itms-services://?action=download-manifest&url=http://awayday.thoughtworkers.org/AwayDay2012.plist) [please access this link in iPhone]
+##[iOS ](itms-services://?action=download-manifest&url=http://awayday.thoughtworkers.org/AwayDay2012.plist) 
+[please access iOS link in iPhone]
 
 
 ## The App shortcuts:
