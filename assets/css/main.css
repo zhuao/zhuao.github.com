@@ -256,13 +256,13 @@ ul.listless li {
 }
 
 #page-archive ol li {
-    font-size:40px;
-    color:#ddd;
+    font-size:27px;
+    color:#8B8B8B;
     margin-bottom:40px;
 }
 
 #page-archive ol li:hover {    
-    color:#ccc;
+    color:#8B8B8B;
 }
 
 #page-archive ol li h2 a {
