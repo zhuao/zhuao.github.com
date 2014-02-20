@@ -5,6 +5,7 @@
   author:
     name: Ao Zhu
     url: http://zhuao.github.io
+  summary: Introduct all steps to setup CI for an Android project.
     
 ---
 

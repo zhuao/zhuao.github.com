@@ -1,8 +1,8 @@
 # Jekyll
 exclude: nbproject, README.md, manifest.yml, rakefile.rb, Gemfile, Gemfile.lock, update.sh
 permalink:   /:year/:month/:title
-url:         http://zhuao.github.io
-
+url:         http://zhuao.me
+encoding: utf-8
 safe:        false
 auto:        false
 

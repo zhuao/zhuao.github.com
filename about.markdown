@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Ao Zhu
+title: Zhu Ao
 ---
 
 <p>I'm an IT professional, Java and Android developer. I work for <a href="http://http://www.thoughtworks.com/">Thoughtworks</a>, I love automating every things and dream of the day when we could control every machine in our house by a mobile device.</p>

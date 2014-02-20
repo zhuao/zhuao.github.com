@@ -28,7 +28,7 @@ blockquote {
 
 body {
     margin-bottom: 60px;
-    padding-top:60px;
+    padding-top:40px;
     background-image: url('/background.png');
 }
 
@@ -41,12 +41,12 @@ body {
     background: url('../images/logo.png') transparent no-repeat top left;
     width:100px;
     height:100px;
-    top: 60px;
+    top: 40px;
     left:-50px;
 }
 
 .hero-unit {
-    padding:60px 60px 80px;
+    padding:40px 60px 60px;
     font-size: 13px;
     line-height: 18px;
     color: #333;
@@ -181,7 +181,7 @@ body.home .post {
 
 .newer-older {
     margin-top: 20px;
-    margin-bottom: -20px;    
+    margin-bottom: -20px;
 }
 
 .newer-older a:hover i {
@@ -222,6 +222,16 @@ body.home .post {
 .newer-older .older i {
     margin-left:10px;
     float:right;
+}
+
+.newer-older .older i:before {
+    position: relative;
+    top: -13px;
+}
+
+.newer-older .newer i:before {
+    position: relative;
+    top: -13px;
 }
 
 ul.listless {
