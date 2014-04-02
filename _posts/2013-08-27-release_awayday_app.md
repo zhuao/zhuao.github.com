@@ -4,7 +4,7 @@
   tag: Android App, iOS App
   author:
     name: Ao Zhu
-    url: http://zhuao.github.io
+    url: http://zhuao.me
     
 ---
 

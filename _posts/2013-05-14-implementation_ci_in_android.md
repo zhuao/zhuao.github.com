@@ -4,7 +4,7 @@
   tag: Android, CI, Automated Test, jenkins
   author:
     name: Ao Zhu
-    url: http://zhuao.github.io
+    url: http://zhuao.me
   summary: Introduct all steps to setup CI for an Android project.
     
 ---

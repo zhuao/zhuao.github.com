@@ -4,7 +4,7 @@ title:Steps to setup Hadoop on MacXOS
 layout:defaul
 tag:hadoop
 author:
-	name: ZHU Ao
+	name: Zhu Ao
 	url: zhuao.me
 	
 ----
