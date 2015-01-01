@@ -1,5 +1,5 @@
 ---
-  title: Introduce the Material design and Lollipop changeds
+  title: Introduce the Material design and Lollipop changes
   layout: default
   tag: Android, Lollipop
   author:
