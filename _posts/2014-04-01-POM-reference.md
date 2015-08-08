@@ -1,10 +1,8 @@
 ---
   title: POM preference
-  layout: default
-  tag: Maven, POM
-  author:
-    name: Ao Zhu
-    url: http://zhuao.me
+  layout: post
+  categories: Maven, POM
+  author: Ao Zhu
   summary: Descript the structure of pom file to avoid forget how to run task.
     
 ---

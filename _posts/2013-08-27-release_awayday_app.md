@@ -1,11 +1,8 @@
 ---
   title: TW awayday conference application
-  layout: default
-  tag: Android App, iOS App
-  author:
-    name: Ao Zhu
-    url: http://zhuao.me
-    
+  layout: post
+  categories: Android App, iOS App
+  author: Ao Zhu
 ---
 
 ## Description

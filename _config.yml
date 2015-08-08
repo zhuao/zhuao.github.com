@@ -1,11 +1,28 @@
-# Jekyll
-exclude: nbproject, README.md, manifest.yml, rakefile.rb, Gemfile, Gemfile.lock, update.sh
-permalink:   /:year/:month/:title
-url:         http://zhuao.me
-encoding: utf-8
-safe:        false
-auto:        false
+# Site settings
+title: Ao Zhu
+email: zhuao1051atgmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  An Android developer is coding, writing here.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "zhuao.me" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  zhuao
 
-future:      false
-pygments:    true
-markdown:    rdiscount
+# Layout settings
+header_type: default  # values [ drawer, default ]
+post_type: highlight    # values [ highlight, default ]
+pagination_type: default  # values [ ops, default ]
+
+more_vert:
+  option1:
+    name: Cool Option 1
+    link: zhuao.me
+  option2:
+    name: Cool Option 2
+    link: zhuao.me
+  option3:
+    name: Cool Option 3
+    link: zhuao.me
+
+# Build settings
+markdown: kramdown

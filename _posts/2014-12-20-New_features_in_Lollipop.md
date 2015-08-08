@@ -1,10 +1,8 @@
 ---
   title: Introduce the Material design and Lollipop changes
-  layout: default
-  tag: Android, Lollipop
-  author:
-    name: Ao Zhu
-    url: http://zhuao.me
+  layout: post
+  categories: Android, Lollipop
+  author: Ao Zhu
   summary: Quick introduction for new feature of Lollipop, and share the experience for applying material theme to your exsited app.
     
 ---

@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Ao Zhu"
+date:   2018-05-16 04:34:20
+summary: Technology blog about stuff I experienced! Now I'm an Android developer. On the way to an expert, We have to do more coding, write more blog.Neve give up, keep moving.
+image: ../img/android_robot.jpeg
+---
+<p>I'm an IT professional, Java and Android developer. I work for <a href="http://http://www.thoughtworks.com/">Thoughtworks</a>, I love automating every things and dream of the day when we could control every machine in our house by a mobile device.</p>
+
+<p>I also love to make the machine intelligence, and dream of the day when computer coule help us find out the health issue, or tell us how to use the law tool.</p>
+

@@ -1,10 +1,8 @@
 ---
   title: Steps to setup Hadoop on MacXOS
-  layout: default
-  tag: hadoop
-  author:
-    name: Ao Zhu
-    url: http://zhuao.me
+  layout: post
+  categories: hadoop
+  author: Ao Zhu
   summary: Setup hadoop at first time
     
 ---

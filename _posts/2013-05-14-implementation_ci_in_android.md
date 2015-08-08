@@ -1,10 +1,9 @@
 ---
   title: 实现Android CI
-  layout: default
-  tag: Android, CI, Automated Test, jenkins
-  author:
-    name: Ao Zhu
-    url: http://zhuao.me
+  layout: post
+  date: 2013-05-14
+  categories: Android, CI, Automated Test, jenkins
+  author: Ao Zhu
   summary: Introduct all steps to setup CI for an Android project.
     
 ---
